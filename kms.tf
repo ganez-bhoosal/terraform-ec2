@@ -11,11 +11,27 @@ resource "aws_kms_alias" "ebs" {
 
 data "aws_iam_policy_document" "default" {
   statement {
-    sid = "Enable IAM User Permission"
+    sid = "Enable IAM Root Permission"
     principals { 
       type = "AWS"
       identifiers = [
         "arn:aws:iam::293710235542:root"
+       ]
+     }
+    actions = [
+      "kms:*"
+    ]
+
+    resources = [
+      "*"
+    ]
+}
+  statement {
+    sid = "Enable IAM User Permission"
+    principals {
+      type = "AWS"
+      identifiers = [
+        "arn:aws:iam::293710235542:user/s3-admin"
        ]
      }
     actions = [
