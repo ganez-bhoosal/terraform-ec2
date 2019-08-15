@@ -5,7 +5,7 @@ resource "aws_kms_key" "default" {
 }
 
 resource "aws_kms_alias" "ebs_custom" {
-  name = "alias/aws/ebs"
+  name = "alias/aws/ganesh"
   target_key_id = "${aws_kms_key.default.key_id}"
 }
 
