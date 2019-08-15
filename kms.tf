@@ -1,6 +1,6 @@
 resource "aws_kms_key" "default" {
   description             = "Ganesh KMS Key for EBS "
-  policy = "${data.aws_iam_policy_document.json}"
+  policy = "${data.aws_iam_policy_document.default.json}"
   deletion_window_in_days = 10
 }
 
