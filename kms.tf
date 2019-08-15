@@ -22,9 +22,6 @@ data "aws_iam_policy_document" "default" {
       "kms:*"
     ]
 
-    resources = [
-      "*"
-    ]
 }
   statement {
     sid = "Enable IAM User Permission"
