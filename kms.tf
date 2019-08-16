@@ -32,7 +32,20 @@ data "aws_iam_policy_document" "default" {
        ]
      }
     actions = [
-      "kms:*"
+                "kms:Create*",
+                "kms:Describe*",
+                "kms:Enable*",
+                "kms:List*",
+                "kms:Put*",
+                "kms:Update*",
+                "kms:Revoke*",
+                "kms:Disable*",
+                "kms:Get*",
+                "kms:Delete*",
+                "kms:TagResource",
+                "kms:UntagResource",
+                "kms:ScheduleKeyDeletion",
+                "kms:CancelKeyDeletion" 
     ]
 
     resources = [
@@ -48,7 +61,11 @@ statement {
        ]
      }
     actions = [
-      "kms:*"
+      "kms:Encrypt",
+                "kms:Decrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*",
+                "kms:DescribeKey" 
     ]
 
     resources = [
