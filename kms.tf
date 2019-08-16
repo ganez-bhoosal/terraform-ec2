@@ -21,6 +21,9 @@ data "aws_iam_policy_document" "default" {
     actions = [
       "kms:*"
     ]
+    resources = [
+      "*"
+    ]
 
 }
   statement {
