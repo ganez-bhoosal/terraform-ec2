@@ -40,7 +40,7 @@ data "aws_iam_policy_document" "default" {
     ]
 }
 statement {
-    sid = "Allow Use Of The Key""
+    sid = "Allow Use Of The Key"
     principals {
       type = "AWS"
       identifiers = [
