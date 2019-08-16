@@ -39,6 +39,22 @@ data "aws_iam_policy_document" "default" {
       "*"
     ]
 }
+statement {
+    sid = "Allow Use Of The Key""
+    principals {
+      type = "AWS"
+      identifiers = [
+        "arn:aws:iam::293710235542:user/s3-admin"
+       ]
+     }
+    actions = [
+      "kms:*"
+    ]
+
+    resources = [
+      "*"
+    ]
+}
 }
 
 
