@@ -3,12 +3,12 @@ resource "aws_kms_key" "default" {
   policy = "${data.aws_iam_policy_document.default.json}"
   deletion_window_in_days = 10
 }
-
+/*
 resource "aws_kms_alias" "ebs_custom" {
   name = "alias/aws/ganesh"
   target_key_id = "${aws_kms_key.default.key_id}"
 }
-
+*/
 data "aws_iam_policy_document" "default" {
   statement {
     sid = "Enable IAM Root Permission"
