@@ -60,7 +60,7 @@ statement {
     principals {
       type = "AWS"
       identifiers = [
-        "arn:aws:iam::293710235542:user/s3-admin"
+        "arn:aws:iam::293710235542:user/iam-user"
        ]
      }
     actions = [
