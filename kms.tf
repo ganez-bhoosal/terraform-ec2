@@ -5,7 +5,7 @@ resource "aws_kms_key" "default" {
 }
 
 resource "aws_kms_alias" "ebs_custom" {
-  name = "alias/aws/ganesh"
+  name = "alias/ganesh"
   target_key_id = "${aws_kms_key.default.key_id}"
 }
 
@@ -50,32 +50,7 @@ data "aws_iam_policy_document" "default" {
                 "kms:ScheduleKeyDeletion",
                 "kms:CancelKeyDeletion" 
     ]
-
-    resources = [
-      "*"
-    ]
-}
-statement {
-    sid = "Allow Use Of The Key"
-    principals {
-      type = "AWS"
-      identifiers = [
-        "arn:aws:iam::293710235542:user/iam-user"
-       ]
-     }
-    actions = [
-      "kms:Encrypt",
-                "kms:Decrypt",
-                "kms:ReEncrypt*",
-                "kms:GenerateDataKey*",
-                "kms:DescribeKey" 
-    ]
-
-    resources = [
-      "*"
-    ]
 }
 }
-
 
 
